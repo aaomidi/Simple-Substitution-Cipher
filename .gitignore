@@ -1,0 +1,23 @@
+# IntelliJ
+.idea/
+*.iml
+
+# Java
+*.jar
+*.class
+
+# Maven
+target/
+dependency-reduced-pom.xml
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+.*
+
+!.gitattributes
+!.gitignore
