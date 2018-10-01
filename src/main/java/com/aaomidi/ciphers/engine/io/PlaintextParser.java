@@ -35,10 +35,9 @@ public class PlaintextParser extends RecursiveTask<Frequency> {
         } else {
 
             List<PlaintextParser> tasks = createSubtasks();
-            tasks.forEach(PlaintextParser::fork);
-
-
-            Map<String, Integer> result = tasks.stream().map(ForkJoinTask::join)
+            Map<String, Integer> result = tasks.stream()
+                    .map(PlaintextParser::fork) // Fork to execute
+                    .map(ForkJoinTask::join) // Join the results
                     .map(Frequency::getFrequencyMap)
                     .flatMap(m -> m.entrySet().stream())
                     .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (v1, v2) -> v1 + v2));

@@ -12,7 +12,7 @@ public class Main {
     private Main(String... args) {
         InputStream inputStream = getClass().getClassLoader().getResourceAsStream("book2.txt");
 
-        FitnessRegistry registry = new FitnessRegistry();
+        FitnessRegistry registry = new FitnessRegistry(inputStream);
         String input = Main.input;
         if (args.length > 0) {
             input = StreamHandler.sanitize(args[0]);
