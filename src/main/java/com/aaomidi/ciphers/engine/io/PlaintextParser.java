@@ -40,7 +40,7 @@ public class PlaintextParser extends RecursiveTask<Frequency> {
                     .map(ForkJoinTask::join) // Join the results
                     .map(Frequency::getFrequencyMap)
                     .flatMap(m -> m.entrySet().stream())
-                    .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (v1, v2) -> v1 + v2));
+                    .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, Integer::sum));
             return new Frequency(result);
         }
     }
@@ -54,7 +54,7 @@ public class PlaintextParser extends RecursiveTask<Frequency> {
                         .filter(s -> !s.isEmpty())
                         .map(s -> Splitter.fixedLength(grouping).split(s))
                         .flatMap(s -> StreamSupport.stream(s.spliterator(), false))
-                        .collect(Collectors.toMap(s -> s, s -> 1, (v1, v2) -> v1 + v2))
+                        .collect(Collectors.toMap(s -> s, s -> 1, Integer::sum))
         );
 
     }
