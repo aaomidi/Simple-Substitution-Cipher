@@ -5,11 +5,11 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class SubstitutionCipher {
-    private final FitnessRegistry fitness;
+    private final Fitness fitness;
     private final String input;
     private final Random random = new Random();
 
-    public SubstitutionCipher(FitnessRegistry fitness, String input) {
+    public SubstitutionCipher(Fitness fitness, String input) {
         this.fitness = fitness;
         this.input = input;
     }
@@ -22,7 +22,7 @@ public class SubstitutionCipher {
         List<String> maxKey = Arrays.asList("ABCDEFGHIJKLMNOPQRSTUVWXYZ".split(""));
 
         double maxScore = Double.MIN_VALUE;
-
+        int i = 0;
         while (true) {
             List<String> parentKey = new ArrayList<>(maxKey);
             shuffleKey(parentKey);
@@ -48,19 +48,20 @@ public class SubstitutionCipher {
                 }
                 count++;
             }
-
             if (parentScore > maxScore) {
                 maxScore = parentScore;
                 maxKey = parentKey;
 
 
-                System.out.printf("Result Found:\n\tTime: %d\n\tKey: %s\n\tPlain text: %s\n\t Score: %f\n",
+                System.out.printf(
+                        "Result Found (%d):\n\tTime: %d\n\tKey: %s\n\tPlain text: %s\n\t Score: %f\n",
+                        i,
                         System.currentTimeMillis(),
                         maxKey,
                         decipher(maxKey),
                         maxScore);
             }
-
+            i++;
         }
     }
 
