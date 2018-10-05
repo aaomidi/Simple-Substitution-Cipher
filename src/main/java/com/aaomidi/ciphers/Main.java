@@ -1,6 +1,6 @@
 package com.aaomidi.ciphers;
 
-import com.aaomidi.ciphers.engine.FitnessRegistry;
+import com.aaomidi.ciphers.engine.Fitness;
 import com.aaomidi.ciphers.engine.SubstitutionCipher;
 import com.aaomidi.ciphers.util.StreamHandler;
 
@@ -10,13 +10,11 @@ public class Main {
     private static final String input = "GBSXUCGSZQGKGSQPKQKGLSKASPCGBGBKGUKGCEUKUZKGGBSQEICACGKGCEUERWKLKUPKQQGCIICUAEUVSHQKGCEUPCBGCGQOEVSHUNSUGKUZCGQSNLSHEHIEEDCUOGEPKHZGBSNKCUGSUKUASERLSKASCUGBSLKACRCACUZSSZEUSBEXHKRGSHWKLKUSQSKCHQTXKZHEUQBKZAENNSUASZFENFCUOCUEKBXGBSWKLKUSQSKNFKQQKZEHGEGBSXUCGSZQGKGSQKUZBCQAEIISKOXSZSICVSHSZGEGBSQSAHSGKHMERQGKGSKREHNKIHSLIMGEKHSASUGKNSHCAKUNSQQKOSPBCISGBCQHSLIMQGKGSZGBKGCGQSSNSZXQSISQQGEAEUGCUXSGBSSJCQGCUOZCLIENKGCAUSOEGCKGCEUQCGAEUGKCUSZUEBGHSKGEHBCUGERPKHEHKHNSZKGGKAD";
 
     private Main(String... args) {
-        InputStream inputStream = getClass().getClassLoader().getResourceAsStream("book2.txt");
-
-        FitnessRegistry registry = new FitnessRegistry(inputStream);
+        Fitness registry = new Fitness();
         String input = Main.input;
+
         if (args.length > 0) {
             input = StreamHandler.sanitize(args[0]);
-            System.out.println(input);
         }
 
         SubstitutionCipher cipher = new SubstitutionCipher(registry, input);
