@@ -1,10 +1,8 @@
-package com.aaomidi.ciphers;
+package com.aaomidi.ciphers.simplesubstition;
 
-import com.aaomidi.ciphers.engine.Fitness;
-import com.aaomidi.ciphers.engine.SubstitutionCipher;
-import com.aaomidi.ciphers.util.StreamHandler;
-
-import java.io.InputStream;
+import com.aaomidi.ciphers.simplesubstition.engine.Fitness;
+import com.aaomidi.ciphers.simplesubstition.engine.SubstitutionCipher;
+import com.aaomidi.ciphers.simplesubstition.util.StreamHandler;
 
 public class Main {
     private static final String input = "GBSXUCGSZQGKGSQPKQKGLSKASPCGBGBKGUKGCEUKUZKGGBSQEICACGKGCEUERWKLKUPKQQGCIICUAEUVSHQKGCEUPCBGCGQOEVSHUNSUGKUZCGQSNLSHEHIEEDCUOGEPKHZGBSNKCUGSUKUASERLSKASCUGBSLKACRCACUZSSZEUSBEXHKRGSHWKLKUSQSKCHQTXKZHEUQBKZAENNSUASZFENFCUOCUEKBXGBSWKLKUSQSKNFKQQKZEHGEGBSXUCGSZQGKGSQKUZBCQAEIISKOXSZSICVSHSZGEGBSQSAHSGKHMERQGKGSKREHNKIHSLIMGEKHSASUGKNSHCAKUNSQQKOSPBCISGBCQHSLIMQGKGSZGBKGCGQSSNSZXQSISQQGEAEUGCUXSGBSSJCQGCUOZCLIENKGCAUSOEGCKGCEUQCGAEUGKCUSZUEBGHSKGEHBCUGERPKHEHKHNSZKGGKAD";

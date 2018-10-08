@@ -1,4 +1,4 @@
-package com.aaomidi.ciphers.util;
+package com.aaomidi.ciphers.simplesubstition.util;
 
 import java.util.stream.Collectors;
 

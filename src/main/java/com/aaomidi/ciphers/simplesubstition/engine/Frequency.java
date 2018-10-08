@@ -1,4 +1,4 @@
-package com.aaomidi.ciphers.engine;
+package com.aaomidi.ciphers.simplesubstition.engine;
 
 import java.util.HashMap;
 import java.util.Map;
